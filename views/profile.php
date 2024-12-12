@@ -3,17 +3,20 @@ require_once '../models/UserModel.php';
 
 session_start();
 
-if (isset($_SESSION['id'])) {
-    $userModel = new UserModel();
-    $user = $userModel->getUserById($_SESSION['id']);
+if (isset($_SESSION['user'])) {
+    $user = $_SESSION['user'];
     $name = $user['name'];
     $email = $user['email'];
     $profilePicture = 'https://via.placeholder.com/150';
+} else {
+    header("Location: ../index.php");
+    exit();
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="icon" type="image/x-icon" href="../assets/images/ptpn6.png">
     <meta charset="UTF-8">
@@ -23,24 +26,25 @@ if (isset($_SESSION['id'])) {
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-900 font-sans leading-normal tracking-normal text-gray-200">
-    <div class="max-w-md mx-auto mt-16 p-8 bg-gray-800 rounded-xl shadow-2xl">
-        <h1 class="text-3xl font-bold text-center text-white mb-8">Profile</h1>
+
+<body class="bg-yellow-800 font-sans leading-normal tracking-normal text-gray-200">
+    <div class="max-w-md mx-auto mt-16 p-8 bg-yellow-300 rounded-xl shadow-2xl">
+        <h1 class="text-3xl font-bold text-center text-yellow-800 mb-8">Profile</h1>
 
         <div class="flex items-center justify-center mb-8">
-            <img src="<?= $profilePicture; ?>" alt="Profile Picture" class="w-32 h-32 rounded-full border-4 border-gray-600">
+            <img src="<?= $profilePicture; ?>" alt="Profile Picture" class="w-32 h-32 rounded-full border-4 border-yellow-800">
         </div>
 
         <div class="mb-6">
-            <label for="name" class="block text-gray-300 font-semibold">Name</label>
-            <div class="mt-2 p-3 bg-gray-700 text-gray-200 rounded-lg">
+            <label for="name" class="block text-yellow-800 font-semibold">Name</label>
+            <div class="mt-2 p-3 bg-yellow-800 text-gray-200 rounded-lg">
                 <?php echo $name; ?>
             </div>
         </div>
 
         <div class="mb-6">
-            <label for="email" class="block text-gray-300 font-semibold">Email</label>
-            <div class="mt-2 p-3 bg-gray-700 text-gray-200 rounded-lg">
+            <label for="email" class="block text-yellow-800 font-semibold">Email</label>
+            <div class="mt-2 p-3 bg-yellow-800 text-gray-200 rounded-lg">
                 <?php echo $email; ?>
             </div>
         </div>
@@ -52,4 +56,5 @@ if (isset($_SESSION['id'])) {
         </div>
     </div>
 </body>
+
 </html>

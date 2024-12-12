@@ -16,6 +16,7 @@ $transactions = $transactionController->getTransactions();
 
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,32 +25,26 @@ $transactions = $transactionController->getTransactions();
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <title>Transactions - Kopi Kenangan Senja</title>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-    </style>
+    <title>Transactions - Radja Es Teler & Dawet Durian Sultan</title>
 </head>
-<body class="bg-gray-100">
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-800 bg-opacity-90 py-4 px-6 flex justify-between items-center shadow-md">
-        <a href="#" class="text-2xl font-bold italic text-white">
-            kenangan<span class="text-yellow-500">senja</span>
-        </a>
-        <div class="flex space-x-4 items-center text-white">
+
+<body class="bg-yellow-800 text-white font-poppins">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-yellow-300 bg-opacity-80 py-4 px-6 flex justify-between items-center shadow-md">
+        <a href="#" class="text-2xl font-bold italic text-yellow-800">Radja Es Teler & <span class="text-yellow-800">Dawet Durian</span></a>
+        <div class="flex space-x-4 items-center text-yellow-800">
             <span class="hidden md:block font-medium"><?= htmlspecialchars($user['name']); ?></span>
-            <a href="#" id="modal-button" class="hover:text-yellow-500"><i data-feather="user"></i></a>
-            <a href="#" id="menu-button" class="md:hidden hover:text-yellow-500"><i data-feather="menu"></i></a>
-            <a href="#" id="close-button" class="hidden md:hidden hover:text-yellow-500"><i data-feather="x"></i></a>
+            <a href="#" id="modal-button" class="hover:text-yellow-800"><i data-feather="user"></i></a>
+            <a href="#" id="menu-button" class="md:hidden hover:text-yellow-800"><i data-feather="menu"></i></a>
+            <a href="#" id="close-button" class="hidden md:hidden hover:text-yellow-800"><i data-feather="x"></i></a>
         </div>
     </nav>
 
     <div id="menu-modal" class="bg-black bg-opacity-50 absolute top-14 right-4 z-50 hidden">
         <div class="bg-white/60 backdrop-blur-lg py-4 rounded-lg shadow-lg w-48">
             <ul>
-                <a href="../profile.php" class="text-gray-700 hover:bg-gray-100 py-2 px-4 block w-full">Profile</a>
-                <a href="../settings.php" class="text-gray-700 hover:bg-gray-100 py-2 px-4 block w-full">Settings</a>
-                <a href="../../controllers/LogoutController.php" class="text-gray-700 hover:bg-gray-100 py-2 px-4 block w-full">Logout</a>
+                <a href="../profile.php" class="text-yellow-800 hover:bg-yellow-300 py-2 px-4 block w-full">Profile</a>
+                <a href="../settings.php" class="text-yellow-800 hover:bg-yellow-300 py-2 px-4 block w-full">Settings</a>
+                <a href="../../controllers/LogoutController.php" class="text-yellow-800 hover:bg-yellow-300 py-2 px-4 block w-full">Logout</a>
             </ul>
         </div>
     </div>
@@ -65,23 +60,23 @@ $transactions = $transactionController->getTransactions();
     </aside>
 
     <div class="container mx-auto mt-32 px-4 md:ml-72">
-        <h1 class="text-3xl font-bold text-gray-800 mb-6">Daftar Pesanan</h1>
-        <div class="overflow-x-auto bg-white border rounded-lg shadow-md">
+        <h1 class="text-3xl font-bold text-white mb-6">Daftar Pesanan</h1>
+        <div class="overflow-x-auto bg-yellow-800 border border-yellow-300 rounded-lg shadow-md">
             <table class="min-w-full">
                 <thead>
-                    <tr class="bg-gray-200 text-gray-700 text-left">
-                        <th class="px-6 py-3 border">Nama Pemesan</th>
-                        <th class="px-6 py-3 border">Menu</th>
-                        <th class="px-6 py-3 border">Jumlah</th>
-                        <th class="px-6 py-3 border">Harga</th>
-                        <th class="px-6 py-3 border">Status</th>
-                        <th class="px-6 py-3 border">Action</th>
+                    <tr class="bg-gradient-to-r from-yellow-500 to-orange-500 text-white">
+                        <th class="px-6 py-3 text-left">Nama Pemesan</th>
+                        <th class="px-6 py-3 text-left">Menu</th>
+                        <th class="px-6 py-3 text-left">Jumlah</th>
+                        <th class="px-6 py-3 text-left">Harga</th>
+                        <th class="px-6 py-3 text-left">Status</th>
+                        <th class="px-6 py-3 text-left">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php if (!empty($transactions)): ?>
                         <?php foreach ($transactions as $transaction): ?>
-                            <tr class="border-b hover:bg-gray-100">
+                            <tr class="border-b hover:bg-y-100">
                                 <td class="px-6 py-4"><?= htmlspecialchars($transaction['orderer_name']); ?></td>
                                 <td class="px-6 py-4"><?= htmlspecialchars($transaction['menu_name']); ?></td>
                                 <td class="px-6 py-4"><?= htmlspecialchars($transaction['quantity']); ?></td>
@@ -106,7 +101,7 @@ $transactions = $transactionController->getTransactions();
                         <?php endforeach; ?>
                     <?php else: ?>
                         <tr>
-                            <td colspan="6" class="text-center px-6 py-4 text-gray-500">Belum ada transaksi</td>
+                            <td colspan="6" class="text-center px-6 py-4 text-yellow-300">Belum ada transaksi</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>
@@ -141,4 +136,5 @@ $transactions = $transactionController->getTransactions();
         });
     </script>
 </body>
+
 </html>

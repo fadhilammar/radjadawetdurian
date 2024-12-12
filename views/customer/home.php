@@ -15,6 +15,7 @@ $menus = $menuController->getMenus();
 
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible=" IE="edge">
@@ -23,25 +24,26 @@ $menus = $menuController->getMenus();
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/feather-icons"></script>
   <link rel="stylesheet" href="../../assets/css/style.css">
-  <title>Kopi Kenangan Senja</title>
+  <title>Radja Es Teler & Dawet Durian Sultan</title>
 </head>
-<body class="bg-gray-900 text-white font-poppins">
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-800 bg-opacity-80 py-4 px-6 flex justify-between items-center border-b border-gray-700">
-    <a href="#" class="text-2xl font-bold italic text-white">kenangan<span class="text-yellow-500">senja</span></a>
-    <div class="flex space-x-4 items-center">
-      <span class="hidden md:block"><?= htmlspecialchars($user['name']); ?></span>
-      <a href="#" id="modal-button" class="hover:text-yellow-500"><i data-feather="user"></i></a>
-      <a href="#" id="menu-button" class="md:hidden hover:text-yellow-500"><i data-feather="menu"></i></a>
-      <a href="#" id="close-button" class="hidden md:hidden hover:text-yellow-500"><i data-feather="x"></i></a>
+
+<body class="bg-yellow-800 text-white font-poppins">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-yellow-300 bg-opacity-80 py-4 px-6 flex justify-between items-center shadow-md">
+    <a href="#" class="text-2xl font-bold italic text-yellow-800">Radja Es Teler & <span class="text-yellow-800">Dawet Durian</span></a>
+    <div class="flex space-x-4 items-center text-yellow-800">
+      <span class="hidden md:block font-medium"><?= htmlspecialchars($user['name']); ?></span>
+      <a href="#" id="modal-button" class="hover:text-yellow-800"><i data-feather="user"></i></a>
+      <a href="#" id="menu-button" class="md:hidden hover:text-yellow-800"><i data-feather="menu"></i></a>
+      <a href="#" id="close-button" class="hidden md:hidden hover:text-yellow-800"><i data-feather="x"></i></a>
     </div>
   </nav>
 
   <div id="menu-modal" class="bg-black bg-opacity-50 absolute top-14 right-4 z-50 hidden">
     <div class="bg-white/60 backdrop-blur-lg py-4 rounded-lg shadow-lg w-48">
       <ul>
-        <a href="../profile.php" class="text-gray-700 hover:bg-gray-100 py-2 px-4 block w-full">Profile</a>
-        <a href="../settings.php" class="text-gray-700 hover:bg-gray-100 py-2 px-4 block w-full">Settings</a>
-        <a href="../../controllers/LogoutController.php" class="text-gray-700 hover:bg-gray-100 py-2 px-4 block w-full">Logout</a>
+        <a href="../profile.php" class="text-yellow-800 hover:bg-yellow-300 py-2 px-4 block w-full">Profile</a>
+        <a href="../settings.php" class="text-yellow-800 hover:bg-yellow-300 py-2 px-4 block w-full">Settings</a>
+        <a href="../../controllers/LogoutController.php" class="text-yellow-800 hover:bg-yellow-300 py-2 px-4 block w-full">Logout</a>
       </ul>
     </div>
   </div>
@@ -71,21 +73,21 @@ $menus = $menuController->getMenus();
   <?php endif; ?>
 
   <section class="absolute left-8 md:left-72 top-32">
-    <h3 class="text-2xl font-bold mb-4">Menu</h3>
-    <p class="text-gray-300 mb-6">Menu yang tersedia</p>
+    <h3 class="text-2xl font-bold mb-4 text-white">Menu</h3>
+    <p class="text-white mb-6">Menu yang tersedia</p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <?php foreach ($menus as $menu): ?>
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center">
+        <div class="bg-yellow-300 p-6 rounded-lg shadow-lg flex flex-col items-center">
           <div class="flex justify-center gap-4 mb-4">
-            <a href="#" class="text-yellow-500 bg-gray-900 p-3 rounded-full hover:bg-yellow-500 hover:text-gray-900 transition duration-300 ease-in-out">
+            <a href="#" class="text-yellow-800 bg-yellow-500 p-3 rounded-full hover:bg-yellow-800 hover:text-white transition duration-300 ease-in-out">
               <i data-feather="shopping-cart"></i>
             </a>
-            <button id="order-button" class="bg-yellow-500 p-3 hover:bg-yellow-400 transition duration-300 ease-in-out flex items-center justify-center">Pesan Sekarang</button>
+            <button id="order-button" class="bg-yellow-800 p-3 hover:bg-yellow-500 transition duration-300 ease-in-out flex items-center justify-center">Pesan Sekarang</button>
           </div>
           <img src="../../storage/images/<?= $menu['menu_image']; ?>" alt="<?= $menu['menu_name']; ?>" class="rounded-lg mb-4 w-full h-48 object-cover">
-          <h3 class="text-xl font-semibold text-white"><?= $menu['menu_name']; ?></h3>
-          <p class="text-yellow-500 mt-2">IDR <?= $menu['price']; ?></p>
-          <p class="text-gray-400 mt-2"><?= $menu['description']; ?></p>
+          <h3 class="text-xl font-semibold text-yellow-800"><?= $menu['menu_name']; ?></h3>
+          <p class="text-yellow-800 mt-2">IDR <?= $menu['price']; ?></p>
+          <p class="text-yellow-800 mt-2"><?= $menu['description']; ?></p>
         </div>
       <?php endforeach; ?>
     </div>
@@ -155,4 +157,5 @@ $menus = $menuController->getMenus();
     });
   </script>
 </body>
+
 </html>

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Keranjang Belanja</title>
   <style>
     .body {
-      background-color: #1a202c;
+      background-color: #FCD34D;
       color: #fff;
       font-family: Arial, sans-serif;
       margin: 0;
@@ -23,6 +24,7 @@
       text-align: center;
       font-size: 2rem;
       margin-bottom: 20px;
+      color: #854D0E;
     }
 
     .cart-section {
@@ -39,14 +41,14 @@
     }
 
     .cart-item {
-      background-color: #2d3748;
+      background-color: #854D0E;
       padding: 20px;
       border-radius: 10px;
-      text-align: left;  
+      text-align: left;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      display: flex; 
+      display: flex;
       align-items: center;
-      gap: 20px; 
+      gap: 20px;
     }
 
     .item-image {
@@ -57,7 +59,7 @@
     }
 
     .item-info {
-      flex-grow: 1; 
+      flex-grow: 1;
     }
 
     .item-name {
@@ -92,21 +94,21 @@
     }
 
     .delete-button {
-      background-color: #e53e3e; 
+      background-color: #e53e3e;
       color: #fff;
     }
 
     .delete-button:hover {
-      background-color: #c53030; 
+      background-color: #c53030;
     }
 
     .order-button {
-      background-color: #38b2ac; 
+      background-color: #38b2ac;
       color: #fff;
     }
 
     .order-button:hover {
-      background-color: #319795; 
+      background-color: #319795;
     }
 
     .modal {
@@ -170,14 +172,15 @@
     }
 
     .empty-cart {
-    display: flex;                 
-    justify-content: center;       
-    align-items: center;           
-    height: 100%;                  
-    text-align: center;            
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-align: center;
     }
   </style>
 </head>
+
 <body class="body">
   <div class="container">
     <h1 class="title">Keranjang Belanja</h1>
@@ -264,4 +267,5 @@
     });
   </script>
 </body>
+
 </html>
